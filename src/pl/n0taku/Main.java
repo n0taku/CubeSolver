@@ -13,9 +13,9 @@ public class Main {
         cube.move("D2 B F2 L2 R' D' U2 F2 D' U");
         cube.print();
 
-//        CFOPSolver solver = new CFOPSolver(cube);
-//        System.out.println(solver.doWhiteCross());
-//        solver.printSolve();
+        CFOPSolver solver = new CFOPSolver(cube);
+        System.out.println(solver.doWhiteCross());
+        solver.printSolve();
 
 
     }
