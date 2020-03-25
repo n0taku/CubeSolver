@@ -36,37 +36,6 @@ public class Cube {
         face.add(new Face(Color.ORANGE));  //4
         face.add(new Face(Color.WHITE));   //5
     }
-
-//    public void print(){
-//        for(Face f : face){
-//            f.printShort();
-//        }
-//    }
-
-//    public void print(){
-//        System.out.println("      "+face.get(0).getCublet(0,0).getSymbol()+" "+face.get(0).getCublet(1,0).getSymbol()+" "+face.get(0).getCublet(2,0).getSymbol()+" ");
-//        System.out.println("      "+face.get(0).getCublet(0,1).getSymbol()+" "+face.get(0).getCublet(1,1).getSymbol()+" "+face.get(0).getCublet(2,1).getSymbol()+" ");
-//        System.out.println("      "+face.get(0).getCublet(0,2).getSymbol()+" "+face.get(0).getCublet(1,2).getSymbol()+" "+face.get(0).getCublet(2,2).getSymbol()+" ");
-//
-//        System.out.print(face.get(1).getCublet(0,0).getSymbol()+" "+face.get(1).getCublet(1,0).getSymbol()+" "+face.get(1).getCublet(2,0).getSymbol()+" ");
-//        System.out.print(face.get(2).getCublet(0,0).getSymbol()+" "+face.get(2).getCublet(1,0).getSymbol()+" "+face.get(2).getCublet(2,0).getSymbol()+" ");
-//        System.out.print(face.get(3).getCublet(0,0).getSymbol()+" "+face.get(3).getCublet(1,0).getSymbol()+" "+face.get(3).getCublet(2,0).getSymbol()+" ");
-//        System.out.println(face.get(4).getCublet(0,0).getSymbol()+" "+face.get(4).getCublet(1,0).getSymbol()+" "+face.get(4).getCublet(2,0).getSymbol()+" ");
-//
-//        System.out.print(face.get(1).getCublet(0,1).getSymbol()+" "+face.get(1).getCublet(1,1).getSymbol()+" "+face.get(1).getCublet(2,1).getSymbol()+" ");
-//        System.out.print(face.get(2).getCublet(0,1).getSymbol()+" "+face.get(2).getCublet(1,1).getSymbol()+" "+face.get(2).getCublet(2,1).getSymbol()+" ");
-//        System.out.print(face.get(3).getCublet(0,1).getSymbol()+" "+face.get(3).getCublet(1,1).getSymbol()+" "+face.get(3).getCublet(2,1).getSymbol()+" ");
-//        System.out.println(face.get(4).getCublet(0,1).getSymbol()+" "+face.get(4).getCublet(1,1).getSymbol()+" "+face.get(4).getCublet(2,1).getSymbol()+" ");
-//
-//        System.out.print(face.get(1).getCublet(0,2).getSymbol()+" "+face.get(1).getCublet(1,1).getSymbol()+" "+face.get(1).getCublet(2,2).getSymbol()+" ");
-//        System.out.print(face.get(2).getCublet(0,2).getSymbol()+" "+face.get(2).getCublet(1,1).getSymbol()+" "+face.get(2).getCublet(2,2).getSymbol()+" ");
-//        System.out.print(face.get(3).getCublet(0,2).getSymbol()+" "+face.get(3).getCublet(1,1).getSymbol()+" "+face.get(3).getCublet(2,2).getSymbol()+" ");
-//        System.out.println(face.get(4).getCublet(0,2).getSymbol()+" "+face.get(4).getCublet(1,1).getSymbol()+" "+face.get(4).getCublet(2,2).getSymbol()+" ");
-//
-//        System.out.println("      "+face.get(5).getCublet(0,0).getSymbol()+" "+face.get(5).getCublet(1,0).getSymbol()+" "+face.get(5).getCublet(2,0).getSymbol()+" ");
-//        System.out.println("      "+face.get(5).getCublet(0,1).getSymbol()+" "+face.get(5).getCublet(1,1).getSymbol()+" "+face.get(5).getCublet(2,1).getSymbol()+" ");
-//        System.out.println("      "+face.get(5).getCublet(0,2).getSymbol()+" "+face.get(5).getCublet(1,2).getSymbol()+" "+face.get(5).getCublet(2,2).getSymbol()+" ");
-//    }
     public void print(){
         System.out.println("      "+face.get(0).getRow(0));
         System.out.println("      "+face.get(0).getRow(1));
@@ -107,14 +76,6 @@ public class Cube {
     private void copyC(Face from,int to,int x,int y, int x2, int y2){
         face.get(to).setCublet(x2,y2,from.getCublet(x,y));
     }
-//
-//    private void swapC(int index1, int x1, int y1, int index2, int x2, int y2){
-//        Color temp;
-//        temp=face.get(index1).getCublet(x1,y1);
-//        face.get(index1).setCublet(x1,y1,face.get(index2).getCublet(x2,y2));
-//        face.get(index2).setCublet(x2,y2,temp);
-//    }
-
     public void move(String move){
         String[] moves = move.split(" ");
         for (String s : moves){
@@ -472,7 +433,7 @@ public class Cube {
         }
     }
 
-    private class Face{
+    public class Face{
         private Color[][] cublet;
         private int width;
         private int height;
